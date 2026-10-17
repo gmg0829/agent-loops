@@ -1,8 +1,8 @@
 # Agent Loops
 
-一套给 AI 工程团队用的循环工作法：外环分诊、内环执行、人工闸门。五个 loop，同一套哲学。
+一套给 AI 工程团队用的循环工作法：外环分诊、内环执行、人工闸门。六个 loop，同一套哲学。
 
-## 五个 loop
+## 六个 loop
 
 | Loop | 管什么 | 一句话 |
 |---|---|---|
@@ -11,6 +11,7 @@
 | [PATROL](specs/PATROL_LOOP_SPEC.md) | 巡逻 | 每 15 分钟扫一遍责任面，异常轻处置或升级，正常静默 |
 | [ROUNDTABLE](specs/ROUNDTABLE_LOOP_SPEC.md) | 议事 | 多 agent 背对背提议、交叉批评、收敛，僵持升级 |
 | [REFINE](specs/REFINE_LOOP_SPEC.md) | 打磨 | 生成 → 按标准评判 → 回炉，超 3 次升级 |
+| [CODE_REVIEW](specs/CODE_REVIEW_LOOP_SPEC.md) | 评审 | 七层：自验 → AI review → 安全 → 自动检查 → 人工闸门 → 灰度 → 回滚 |
 
 每个 loop 目录下有完整 spec（含状态机、失败处理矩阵、决策记录），`skills/` 下是对应的 skill 精简版（执行手册）。
 
@@ -28,7 +29,7 @@
 
 ## 状态
 
-v1.0（2026-10-15 定稿）。五个 spec 均为待真实任务验证：bug loop 待一条真实反馈跑通，dev loop 待第一个真实需求，patrol 待跑一周看误报率，roundtable 待一个真实议题，refine 待一篇真实产出。
+v1.0（2026-10-15 定稿）。六个 spec 中五个待真实任务验证：bug loop 待一条真实反馈跑通，dev loop 待第一个真实需求，patrol 待跑一周看误报率，roundtable 待一个真实议题，refine 待一篇真实产出。CODE_REVIEW 为 v1.0 草案（源自 Anthropic 官方博客改写），待拍板 §11 三项事项。
 
 ## 目录
 
